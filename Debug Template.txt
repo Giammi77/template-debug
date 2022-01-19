@@ -1,0 +1,39 @@
+19/01/22
+
+Progetto: template
+Istanza: mytemplate
+Dump: dati_19_01_22  nella cartella template_debug
+
+Tabelle:
+anagrafica
+pratica
+pratica_riga
+pratica_anag
+invio
+template
+
+ho aggiunto nella : (ma non mi compare il button per la duplicate)
+template.py
+    def onDuplicating_many(self, record, copy_number=None, copy_label=None):
+        record['descrizione'] = record['descrizione'] + '/ Copia ' + str(copy_number+1)
+th_template.py
+	def th_options(self):
+        return dict(dialog_height='400px', dialog_width='600px', duplicate=True)
+
+ho creato template:
+
+prova 1 
+Documento di invio:
+Protocollo:  $protocollo_interno
+
+Nominativo: $id_prat_ana_nominativo
+
+Numero Pratica: $id_prat_ana_n__prat_ 
+
+
+prova 2 errore:
+uguale al prova 1 ma con la tabella per mostrare le righe di pratica_riga
+Row Datasource: @pratica_anag_id.@pratica_id.@pratica_riga
+
+esito template: 
+RecursionError: maximum recursion depth exceeded in __instancecheck__
